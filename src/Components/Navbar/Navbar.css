@@ -47,6 +47,31 @@
             width: 25px;
             height: 25px;
             cursor: pointer;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            margin-top: -5px;
+            margin-left: -11px;
+            font-size: 12px;
+        }
+
+        .wishlist-count {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            margin-top: -5px;
+            margin-left: -11px;
+            font-size: 12px;
         }
     }
 }

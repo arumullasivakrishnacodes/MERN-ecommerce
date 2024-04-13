@@ -1,0 +1,29 @@
+import React from "react";
+import '../Footer/Footer.css';
+import whatsappImg from '../../Assets/Images/whatsapp-icon.png';
+import instagramImg from '../../Assets/Images/instagram-icon.png';
+import twitterxImg from '../../Assets/Images/twitter-icon.png';
+
+function Footer () {
+    return (
+        <div className="footer-main-container">
+            <div className="logo-container">SHOP</div>
+            <div className="footer-links-container">
+                <div className="footer-link">About</div>
+                <div className="footer-link">Offers</div>
+                <div className="footer-link">Products</div>
+                <div className="footer-link">Legal</div>
+                <div className="footer-link">Contact</div>
+            </div>
+            <div className="footer-icons-container">
+                <img src={twitterxImg} alt="" />
+                <img src={instagramImg} alt="" />
+                <img src={whatsappImg} alt="" />
+            </div>
+            <div className="footer-divider"></div>
+            <div className="copyright-container">Copyright @ 2024 - All Rights Reserved.</div>
+        </div>
+    );
+}
+
+export default Footer;

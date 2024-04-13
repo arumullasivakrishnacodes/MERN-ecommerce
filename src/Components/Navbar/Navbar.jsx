@@ -17,9 +17,9 @@ function Navbar () {
             </div>
             <div className="nav-icons-container col-5">
                 <img src={searchIcon} alt="" />
-                <NavLink to="/profile"><img src={profileIcon} alt="" /></NavLink>
-                <NavLink to="/wishlist"><img src={wishlistIcon} alt="" /></NavLink>
-                <NavLink to="/cart"><img src={cartIcon} alt="" /></NavLink>
+                <NavLink to="/profile"><img src={profileIcon} alt="profile" /></NavLink>
+                <NavLink to="/wishlist"><img src={wishlistIcon} alt="wishlist" /><span className="wishlist-count">0</span></NavLink>
+                <NavLink to="/cart"><img src={cartIcon} alt="cart" /><span className="cart-count">0</span></NavLink>
             </div>
         </div>
     )
