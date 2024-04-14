@@ -14,4 +14,23 @@
   width: 100%;
   height: fit-content;
   box-shadow: var(--box-shadow);
+  border-radius: 15px;
+  padding: 12px;
+  margin-bottom: 3%;
+}
+
+.plp-main-container {
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 3%;
+  border-radius: 15px;
+  padding: 24px;
+  background: var(--primary-whitesmoke);
+  
+
+  .plp-product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+  }
 }
