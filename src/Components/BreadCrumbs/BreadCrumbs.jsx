@@ -2,7 +2,6 @@ import React from "react";
 import '../BreadCrumbs/BreadCrumbs.css'
 
 function BreadCrumbs (props) {
-    console.log(props);
     return (
       <div className="breadcrumbs-main-container">
         <p>{props.home}</p>

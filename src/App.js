@@ -8,6 +8,7 @@ import Wishlist from './Pages/Wishlist';
 import Profile from './Pages/Profile';
 import Footer from './Components/Footer/Footer';
 import PLP from './Pages/PLP';
+import PDP from './Pages/PDP';
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
             <Route path='/men' element={<PLP category='men' />} />
             <Route path='/women' element={<PLP category='women' />} />
             <Route path='/kids' element={<PLP category='kids' />} />
+            <Route path='/product' element={<PDP />}>
+              <Route path=':productID' element={<PDP />}/>
+            </Route>
           </Routes>
       </div>
       <Footer />
