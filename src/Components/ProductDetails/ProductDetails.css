@@ -250,3 +250,7 @@
         gap: 24px;
     }
 }
+
+.breadcrumbs-main-container {
+    margin-bottom: 22px;
+}

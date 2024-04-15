@@ -2,6 +2,7 @@ import React from "react";
 import '../ProductDetails/ProductDetails.css';
 import all_product from '../../Assets/Data/all_product';
 import ProductTile from '../../Components/ProductTile/ProductTile'
+import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
 
 function ProductDetails (props) {
     const product = props.product;
@@ -9,6 +10,7 @@ function ProductDetails (props) {
 
     return (
         <>
+            <BreadCrumbs home='Home' category={product.category} pname={product.name}/>
             <div className="productdetails-main-container row">
                 <div className="col-2 mini-image-container">
                     <img src={product.image} alt="" />
@@ -50,6 +52,16 @@ function ProductDetails (props) {
                 <div className="similar-products-grid">
                 {
                     filteredProducts.slice(0,4).map((similarproduct) => {
+                        return <ProductTile product={similarproduct}/>
+                    })
+                }
+                </div>
+            </div>
+            <div className="pdp-similar-products pdp-trending-products">
+                <p className="heading">EXPLORE TRENDING</p>
+                <div className="similar-products-grid">
+                {
+                    filteredProducts.slice(4,8).map((similarproduct) => {
                         return <ProductTile product={similarproduct}/>
                     })
                 }
