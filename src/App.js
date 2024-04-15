@@ -9,9 +9,17 @@ import Profile from './Pages/Profile';
 import Footer from './Components/Footer/Footer';
 import PLP from './Pages/PLP';
 import PDP from './Pages/PDP';
+import ScrollImage from '../src/Assets/Images/scrolltop-btn.png'
 
 
 function App() {
+  const ScrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional, smooth scrolling animation
+    });
+  }
+
   return (
     <BrowserRouter>
     <div className="App">
@@ -30,6 +38,7 @@ function App() {
             </Route>
           </Routes>
       </div>
+      <div className='scrolltop-container' onClick={ScrollTop}><img src={ScrollImage} alt="scrollTo" /></div>
       <Footer />
 
     </div>

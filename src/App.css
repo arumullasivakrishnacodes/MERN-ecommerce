@@ -34,3 +34,18 @@
     gap: 24px;
   }
 }
+
+.scrolltop-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 6%;
+  right: 1.5%;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
