@@ -9,7 +9,8 @@ import Profile from './Pages/Profile';
 import Footer from './Components/Footer/Footer';
 import PLP from './Pages/PLP';
 import PDP from './Pages/PDP';
-import ScrollImage from '../src/Assets/Images/scrolltop-btn.png'
+import ScrollImage from '../src/Assets/Images/scrolltop-btn.png';
+import './common.css'
 
 
 function App() {

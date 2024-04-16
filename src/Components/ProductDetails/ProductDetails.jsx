@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import '../ProductDetails/ProductDetails.css';
 import all_product from '../../Assets/Data/all_product';
 import ProductTile from '../../Components/ProductTile/ProductTile'
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
+import { ShopContext } from "../../Context/ShopContext";
 
 function ProductDetails (props) {
     const product = props.product;
     const filteredProducts = all_product.filter((element) => {return element.category === product.category})
+    const {addToCart} = useContext(ShopContext);
+
+    const handleaddToCart = (productId) => {
+        addToCart(productId);
+
+    }
+
 
     return (
         <>
@@ -40,7 +48,7 @@ function ProductDetails (props) {
                             </div>
                             <div className="pdp-btn-container">
                                 <button className="addtowishlist">MOVE TO WISHLIST <i class="bi bi-heart-fill"></i></button>
-                                <button className="addtocart">ADD TO CART <i class="bi bi-cart3"></i></button>
+                                <button className="addtocart" onClick={() => {handleaddToCart(product.id)}}>ADD TO CART <i class="bi bi-cart3"></i></button>
                             </div>
                         </div>
                     
@@ -51,8 +59,8 @@ function ProductDetails (props) {
                 <p className="heading">EXPLORE SIMILAR</p>
                 <div className="similar-products-grid">
                 {
-                    filteredProducts.slice(0,4).map((similarproduct) => {
-                        return <ProductTile product={similarproduct}/>
+                    filteredProducts.slice(0,4).map((similarproduct, index) => {
+                        return <ProductTile key={index} product={similarproduct}/>
                     })
                 }
                 </div>
@@ -61,8 +69,8 @@ function ProductDetails (props) {
                 <p className="heading">EXPLORE TRENDING</p>
                 <div className="similar-products-grid">
                 {
-                    filteredProducts.slice(4,8).map((similarproduct) => {
-                        return <ProductTile product={similarproduct}/>
+                    filteredProducts.slice(4,8).map((similarproduct, index) => {
+                        return <ProductTile key={index} product={similarproduct}/>
                     })
                 }
                 </div>
