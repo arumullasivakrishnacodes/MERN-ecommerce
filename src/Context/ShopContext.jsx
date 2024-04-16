@@ -8,8 +8,8 @@ const ShopContextProvider = (props) => {
     const [wishListItems, setWishlistItems] = useState([]);
 
     const addToCart = (itemId) => {
-        // const cartItem = ProductsData.find((e) => e.id === Number(itemId));
-        setCartItems([...cartItems, itemId]);
+        const cartItem = ProductsData.find((e) => e.id === Number(itemId));
+        setCartItems([...cartItems, cartItem]);
     }
 
     const addToWishlist = (itemId) => {
