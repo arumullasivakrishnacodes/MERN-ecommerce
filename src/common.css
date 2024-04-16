@@ -39,3 +39,42 @@
         font-size: 16px;
     }
 }
+
+.cart-page-main-container {
+    padding: 12px 28px;
+}
+
+.empty-cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 48px;
+
+    img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .empty-cart-heading {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button {
+        width: 350px;
+        height: 50px;
+        border-radius: 8px;
+        border: 1px solid var(--primary-blue);
+        outline: none;
+        color: var(--primary-blue);
+        font-size: 16px;
+        font-weight: 600;
+        background: var(--white);
+    }
+}

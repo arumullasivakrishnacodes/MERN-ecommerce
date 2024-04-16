@@ -4,6 +4,7 @@ import all_product from '../../Assets/Data/all_product';
 import ProductTile from '../../Components/ProductTile/ProductTile'
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
 import { ShopContext } from "../../Context/ShopContext";
+import { Link } from "react-router-dom";
 
 function ProductDetails (props) {
     const product = props.product;
@@ -12,7 +13,10 @@ function ProductDetails (props) {
 
     const handleaddToCart = (productId) => {
         addToCart(productId);
-
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Optional, smooth scrolling animation
+        });
     }
 
 
@@ -49,6 +53,7 @@ function ProductDetails (props) {
                             <div className="pdp-btn-container">
                                 <button className="addtowishlist">MOVE TO WISHLIST <i class="bi bi-heart-fill"></i></button>
                                 <button className="addtocart" onClick={() => {handleaddToCart(product.id)}}>ADD TO CART <i class="bi bi-cart3"></i></button>
+                                <Link to='/cart'><button className="addtocart d-none" >GO TO CART <i class="bi bi-cart3"></i></button></Link>
                             </div>
                         </div>
                     

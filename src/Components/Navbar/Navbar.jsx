@@ -9,7 +9,7 @@ import MicImg from '../../Assets/Images/mic-image.png'
 import { ShopContext } from "../../Context/ShopContext";
 
 function Navbar () {
-    const {cartItems} = useContext(ShopContext);
+    const {cartItemsCount} = useContext(ShopContext);
     const [searchenabled, setSearchEnabled] = useState(false);
     const [searchinpvalue, setSearchinpValue] = useState('');
 
@@ -33,7 +33,7 @@ function Navbar () {
                 <img src={searchIcon} onClick={handleSearchEnable} alt="" />
                 <NavLink to="/profile"><img src={profileIcon} alt="profile" /></NavLink>
                 <NavLink to="/wishlist"><img src={wishlistIcon} alt="wishlist" /><span className="wishlist-count">0</span></NavLink>
-                <NavLink to="/cart"><img src={cartIcon} alt="cart" /><span className="cart-count">{cartItems.length > 0 ? cartItems.length : 0}</span></NavLink>
+                <NavLink to="/cart"><img src={cartIcon} alt="cart" /><span className="cart-count">{cartItemsCount}</span></NavLink>
             </div>
             
             <div className={`search-popup-container ${searchenabled ? '' : 'd-none'}`}>

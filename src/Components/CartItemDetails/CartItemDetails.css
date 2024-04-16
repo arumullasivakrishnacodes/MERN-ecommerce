@@ -1,0 +1,109 @@
+.cart-price-details-section-container {
+    .coupons-container {
+        width: 100%;
+        margin-bottom: 24px;
+
+        .heading {
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .apply-coupon-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--gray-shade-border);
+            padding: 12px;
+            border-radius: 15px;
+
+            .heading-section {
+                display: flex;
+                align-items: center;
+                column-gap: 24px;
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                }
+
+                span {
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+
+            .apply-coupon-btn {
+                width: fit-content;
+                height: fit-content;
+                padding: 12px 40px;
+                border: 1px solid var(--primary-blue);
+                color: var(--primary-blue);
+                font-weight: 600px;
+                border-radius: 15px;
+                background: var(--white);
+                outline: none;
+            }
+        }
+    }
+
+    .product-details-section {
+        width: 100%;
+        height: fit-content;
+        padding: 24px;
+        background: var(--gray-shade);
+        border: 1px solid var(--gray-shade-border);
+        margin-bottom: 24px;
+        border-radius: 8px;
+
+        .heading {
+            text-align: left;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .price-breakup-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            margin-bottom: 18px;
+
+            span {
+                font-weight: 500;
+            }
+        }
+    }
+
+    .place-order-section {
+        width: 100%;
+        height: fit-content;
+        padding: 24px;
+        background: var(--gray-shade);
+        border: 1px solid var(--gray-shade-border);
+        border-radius: 8px;
+
+        .total-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            margin-bottom: 18px;
+
+            span {
+                font-weight: 500;
+            }
+        }
+
+        .place-order-btn {
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 8px;
+        }
+    }
+}

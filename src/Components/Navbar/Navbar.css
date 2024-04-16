@@ -59,7 +59,8 @@
             color: var(--white);
             margin-top: -5px;
             margin-left: -6px;
-            font-size: 12px;
+            font-size: 10px;
+            padding-top: 1px;
         }
 
         .wishlist-count {
@@ -71,7 +72,8 @@
             color: var(--white);
             margin-top: -5px;
             margin-left: -6px;
-            font-size: 12px;
+            font-size: 10px;
+            padding-top: 1px;
         }
     }
 }
