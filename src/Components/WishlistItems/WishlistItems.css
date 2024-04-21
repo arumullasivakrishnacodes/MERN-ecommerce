@@ -64,3 +64,44 @@
         }
     }
 }
+
+.empty-wishlist-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 24px;
+
+    .main-heart-icon {
+        width: 288px;
+        height: 288px;
+    }
+
+    p {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .category-container-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 18px;
+
+        a {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .category {
+            width: fit-content;
+            height: fit-content;
+            padding: 12px 22px;
+            background: var(--white);
+            border: 1px solid var(--primary-blue);
+            border-radius: 10px;
+            color: var(--primary-blue);
+        }
+    }
+}
