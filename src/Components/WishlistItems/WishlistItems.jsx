@@ -26,7 +26,6 @@ function WishlistItems () {
             <>
                 <div className="wishlist-heading-container">
                     <div className="heading">WISHLIST</div>
-                    <div className="heading-line"></div>
                 </div>
                 <div className="wishlist-items-main-container">
                 {
@@ -51,7 +50,7 @@ function WishlistItems () {
             <div className="empty-wishlist-items">
                 <img src={HeartIcon} alt="Hear Icon" className="main-heart-icon" />
                 <p style={{fontWeight: '600'}}>Hey, It feels so light!</p>
-                <p>There is nothing in your bag. Let's add some items.</p>
+                <p>There is nothing in your Wishlist. Let's add some items.</p>
                 <div className="category-container-buttons">
                     <Link to='/men'><div className="category">Men</div></Link>
                     <Link to='/women'><div className="category">Women</div></Link>

@@ -10,7 +10,7 @@ import Footer from './Components/Footer/Footer';
 import PLP from './Pages/PLP';
 import PDP from './Pages/PDP';
 import ScrollImage from '../src/Assets/Images/scrolltop-btn.png';
-import './common.css'
+import './common.css';
 
 
 function App() {

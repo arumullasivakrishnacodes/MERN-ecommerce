@@ -1,6 +1,6 @@
 .wishlist-heading-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     column-gap: 18px;
     padding: 24px;
@@ -9,6 +9,18 @@
         font-size: 32px;
         font-weight: 600;
         color: var(--black);
+
+        &::after {
+            content: '';
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            width: 70%;
+            height: 4px;
+            background: var(--primary-blue);
+            border-radius: 20px;
+            margin-left: 14%;
+        }
     }
 
     .heading-line {

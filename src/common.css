@@ -40,6 +40,12 @@
     }
 }
 
+@media (max-width: 768px) {
+    .smart-filters-container {
+        overflow-x: scroll;
+    }
+}
+
 .cart-page-main-container {
     padding: 12px 28px;
 }

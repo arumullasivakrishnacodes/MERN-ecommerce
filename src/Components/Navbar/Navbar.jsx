@@ -7,11 +7,13 @@ import profileIcon from '../../Assets/Images/profile-icon.png';
 import searchIcon from '../../Assets/Images/search-icon.png';
 import MicImg from '../../Assets/Images/mic-image.png'
 import { ShopContext } from "../../Context/ShopContext";
+import BagIcon from '../../Assets/Images/shop-bag-image.png'
 
 function Navbar () {
     const {cartItemsCount, wishlistItemsCount} = useContext(ShopContext);
     const [searchenabled, setSearchEnabled] = useState(false);
     const [searchinpvalue, setSearchinpValue] = useState('');
+    const [hamburgerOpen, setHamburhetOpen] = useState(false);
 
     const handleSearchEnable = () => {
         setSearchEnabled(!searchenabled);
@@ -21,8 +23,13 @@ function Navbar () {
         setSearchinpValue(e.target.value);
     }
 
+    const handleHamburger = () => {
+        setHamburhetOpen(!hamburgerOpen)
+    }
+
     return (
-        <div className="navbar-main-container row">
+        <>
+        <div className="navbar-main-container row d-none d-lg-flex">
             <NavLink to="/"><div className="logo-container col-3">SHOP</div></NavLink>
             <div className="navbar-category-container col-4">
                 <NavLink to='/men'><div className="category">Men</div></NavLink>
@@ -47,6 +54,46 @@ function Navbar () {
                 </div>
             </div>
         </div>
+
+        <div className="mobile-navbar-main-container-top d-lg-none">
+            <div className="col-1 hamburger-menu" onClick={handleHamburger}><i className={`bi bi-list ${hamburgerOpen ? 'd-none' : ''}`}></i> <i className={`bi bi-x ${hamburgerOpen ? '' : 'd-none'}`}></i></div>
+            <div className="col-5 nav-bar-logo" ><img src={BagIcon} alt="" /> <span>SHOP</span></div>
+            <div className="col-6 nav-icons">
+                <img src={searchIcon} onClick={handleSearchEnable} alt="" />
+                <NavLink to="/wishlist"><img src={wishlistIcon} alt="wishlist" /><span className="wishlist-count">{wishlistItemsCount}</span></NavLink>
+                <NavLink to="/cart"><img src={cartIcon} alt="cart" /><span className="cart-count">{cartItemsCount}</span></NavLink>
+            </div>
+        </div>
+
+        <div className={`hamburgermenu-main-container ${hamburgerOpen ? 'hamburger-active' : ''}`}>
+            <NavLink to="/men"><div className="hamburger-category">Men</div></NavLink>
+            <NavLink to="/women"><div className="hamburger-category">Women</div></NavLink>
+            <NavLink to="/kids"><div className="hamburger-category">Kids</div></NavLink>
+        </div>
+
+        <div className="mobile-navbar-main-container-bottom d-lg-none">
+        <NavLink to="/"><div className="mobile-below-menu">
+                <img src={BagIcon} alt="" />
+                <p>Home</p>
+            </div></NavLink>
+            <div className="mobile-below-menu">
+                <i class="bi bi-lightning"></i>
+                <p>Trends</p>
+            </div>
+            <div className="mobile-below-menu">
+            <i class="bi bi-gift-fill"></i>
+                <p>Offers</p>
+            </div>
+            <div className="mobile-below-menu">
+            <i class="bi bi-shop"></i>
+                <p>Store</p>
+            </div>
+            <NavLink to="/profile"><div className="mobile-below-menu">
+                <img src={profileIcon} alt="" />
+                <p>Login</p>
+            </div></NavLink>
+        </div>
+        </>
     )
 }
 
