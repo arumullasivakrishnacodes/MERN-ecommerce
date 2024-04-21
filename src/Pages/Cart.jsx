@@ -3,6 +3,7 @@ import { ShopContext } from "../Context/ShopContext";
 import CartProductCard from "../Components/CartProductCard/CartProductCard";
 import CartProductDetails from "../Components/CartItemDetails/CartItemDetails";
 import ShopBagImage from '../Assets/Images/shop-bag-image.png';
+import {Link} from 'react-router-dom'
 
 
 function Cart () {
@@ -29,7 +30,7 @@ function Cart () {
                 <img src={ShopBagImage} alt="" />
                 <p className="empty-cart-heading">Hey, It feels so light!</p>
                 <p>There is nothing in your bag. Let's add some items.</p>
-                <button>ADD FROM WISHLIST</button>
+                <Link to='/wishlist'><button>ADD FROM WISHLIST</button></Link>
             </div>
         )
     }

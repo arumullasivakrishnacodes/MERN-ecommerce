@@ -5,10 +5,15 @@ import { ShopContext } from "../../Context/ShopContext";
 
 function CartProductCard (props) {
     const product = props.product;
-    const {removeCartItem} = useContext(ShopContext)
+    const {removeCartItem, addToWishlist} = useContext(ShopContext)
 
     const deleteProduct = (productID) => {
         removeCartItem(productID);
+    }
+
+    async function hamdleAddToWishlist  (productID)  {
+        await addToWishlist(productID);
+        await deleteProduct(productID);
     }
 
     return (
@@ -27,7 +32,7 @@ function CartProductCard (props) {
                     <img src={returnImage} alt="" /> <span>14 days return available.</span>
                 </div>
                 <div className="buttons-container">
-                    <button className="move-to-wishlist">MOVE TO WISHLIST</button>
+                    <button className="move-to-wishlist" onClick={() => hamdleAddToWishlist(product.id)}>MOVE TO WISHLIST</button>
                     <button className="remove-from-cart" onClick={() => deleteProduct(product.id)}>REMOVE ITEM</button>
                 </div>
             </div>

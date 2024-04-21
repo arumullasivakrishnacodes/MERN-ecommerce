@@ -34,6 +34,16 @@
             color: var(--black);
             cursor: pointer;
         }
+
+        .active {
+            color: var(--primary-blue) !important;
+            font-weight: 600;
+
+            .category {
+                color: var(--primary-blue) !important;
+                font-size: 20px;
+            }
+        }
     }
 
     .nav-icons-container {
