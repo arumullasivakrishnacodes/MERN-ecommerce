@@ -6,6 +6,7 @@ export const ShopContext = createContext(null);
 const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState([]);
     const [cartItemsCount, setCartItemsCount] = useState(0);
+    const [wishlistItemsCount, setWishlistItemsCount] = useState(0);
     const [cartTotalPrice, setCartTotalPrice] = useState(0)
     const [wishListItems, setWishlistItems] = useState([]);
 
@@ -18,6 +19,11 @@ const ShopContextProvider = (props) => {
     const removeCartItem = (itemId) => {
         const updatedProducts = cartItems.filter((product) =>{ return product.id !== itemId});
         setCartItems(updatedProducts);
+    }
+
+    const removeWishlistItem = (itemId) => {
+        const updatedProducts = wishListItems.filter((product) =>{ return product.id !== itemId});
+        setWishlistItems(updatedProducts);
     }
 
     const addToWishlist = (itemId) => {
@@ -39,8 +45,13 @@ const ShopContextProvider = (props) => {
         setCartItemsCount(cartItemsLength);
         getCartTotalPrice();
     }, [cartItems, getCartTotalPrice]);
+
+    useEffect(() => {
+        const wishListItemsLength = wishListItems.length;
+        setWishlistItemsCount(wishListItemsLength);
+    }, [wishListItems])
     
-    const productsData = {ProductsData, cartItems, wishListItems, cartItemsCount, cartTotalPrice, addToCart, addToWishlist, removeCartItem};
+    const productsData = {ProductsData, cartItems, wishListItems, cartItemsCount, wishlistItemsCount, cartTotalPrice, addToCart, addToWishlist, removeCartItem, removeWishlistItem};
 
     return (
         <ShopContext.Provider value={productsData}>
