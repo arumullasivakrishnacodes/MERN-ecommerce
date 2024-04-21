@@ -142,3 +142,13 @@
         }
     }
 }
+
+@media (max-width:768px) {
+    .login-main-container {
+        height: fit-content;
+
+        .login-main-image {
+            height: 250px;
+        }
+    }
+}

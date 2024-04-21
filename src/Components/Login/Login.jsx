@@ -59,11 +59,11 @@ function Login() {
   if (loginstep === "mobile") {
     return (
       <div className="login-main-container row">
-        <div className="col-6 login-main-image">
+        <div className="col-lg-6 col-12 login-main-image">
           <img src={LoginImg} alt="" />
         </div>
         <div
-          className={`col-6 login-components-container`}
+          className={`col-lg-6 col-12 login-components-container`}
           loginstep={loginstep}
         >
           <img src={LoginProfileImg} className="profile-image" alt="" />
@@ -99,10 +99,10 @@ function Login() {
   } else if (loginstep === "otp") {
     return (
       <div className="login-main-container row">
-        <div className="col-6 login-main-image">
+        <div className="col-lg-6 col-12 login-main-image">
           <img src={LoginImg} alt="" />
         </div>
-        <div className={`handle-otp-container col-6`} loginstep={loginstep}>
+        <div className={`handle-otp-container col-lg-6 col-12`} loginstep={loginstep}>
           <img src={LoginProfileImg} className="profile-image" alt="" />
           <p className="otpheading">Enter OTP</p>
           <div className="otp-input-container" id="otpinputsContainer">

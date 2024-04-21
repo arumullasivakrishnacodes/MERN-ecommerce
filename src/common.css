@@ -71,6 +71,12 @@
     .cart-price-coupon-container {
         padding: 0;
     }
+
+    .profile-page-main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .cart-page-main-container {
