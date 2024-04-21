@@ -57,13 +57,18 @@ function ProductDetails (props) {
             <ToastMessage message={toastmessage} success={toaststatus}/>
             <BreadCrumbs home='Home' category={product.category} pname={product.name}/>
             <div className="productdetails-main-container row">
-                <div className="col-2 mini-image-container">
+                <div className="col-lg-2 col-12 mini-image-container d-none d-lg-flex">
                     <img src={product.image} alt="" />
                     <img src={product.image} alt="" />
                     <img src={product.image} alt="" />
                 </div>
-                <div className="col-4 main-image-container"><img src={product.image} alt="" /></div>
-                <div className="col-6 main-product-details-container">
+                <div className="col-lg-4 col-12 main-image-container"><img src={product.image} alt="" /></div>
+                <div className="col-lg-2 col-12 mini-image-container d-lg-none">
+                    <img src={product.image} alt="" />
+                    <img src={product.image} alt="" />
+                    <img src={product.image} alt="" />
+                </div>
+                <div className="col-lg-6 col-12 main-product-details-container">
                     <div className="product-details-section">
                         <div className="name-price-container">
                             <p className="product-name">{product.name}</p>

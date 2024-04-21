@@ -117,3 +117,31 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .wishlist-items-main-container {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+
+        .productTile-main-container .product-details-container .product-name {
+            padding: 0 8px;
+        }
+
+        .wishlist-buttons-container {
+            gap: 6px !important;
+
+            button {
+                height: 32px !important;
+                font-size: 12px !important;
+            }
+
+            .move-to-cart-btn {
+                font-size: 8px !important;
+            }
+        }
+    }
+
+    .wishlist-items-main-container .wishlist-each-item-container {
+        padding: 6px;
+    }
+}

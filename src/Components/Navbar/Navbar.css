@@ -160,7 +160,7 @@
 
 .mobile-navbar-main-container-top {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -247,7 +247,7 @@
 
 .mobile-navbar-main-container-bottom {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -300,7 +300,7 @@
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 70px;
     left: -100%;
     transition: all 0.6s ease-in;

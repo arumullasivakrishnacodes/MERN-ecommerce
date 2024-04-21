@@ -12,14 +12,14 @@ function Cart () {
     if (cartItemsCount > 0) {
         return (
             <div className="cart-page-main-container row">
-                <div className="cart-products-container col-7">
+                <div className="cart-products-container col-lg-7 col-12">
                     {
                         cartItems.map((product) => {
                             return <CartProductCard product={product} />
                         })
                     }
                 </div>
-                <div className="cart-price-coupon-container col-5">
+                <div className="cart-price-coupon-container col-lg-5 col-12">
                     <CartProductDetails />
                 </div>
             </div>

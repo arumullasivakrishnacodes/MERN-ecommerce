@@ -107,3 +107,21 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .apply-coupon-section {
+        .heading-section {
+            img {
+                width: 28px !important;
+                height: 28px !important;
+            }
+            span {
+                font-size: 12px !important;
+            }
+        }
+
+        .apply-coupon-btn {
+            padding: 6px 24px !important;
+        }
+    }
+}

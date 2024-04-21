@@ -43,6 +43,33 @@
 @media (max-width: 768px) {
     .smart-filters-container {
         overflow-x: scroll;
+        column-gap: 12px;
+        justify-content: flex-start;
+
+        button {
+            width: fit-content;
+            min-width: fit-content;
+            height: fit-content;
+            padding: 9px 12px;
+            font-size: 12px;
+        }
+
+        &::-webkit-scrollbar {
+            display: none !important;
+        }
+    }
+
+    .showmorebutton-container {
+        margin-top: 24px;
+    }
+
+    .cart-products-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .cart-price-coupon-container {
+        padding: 0;
     }
 }
 

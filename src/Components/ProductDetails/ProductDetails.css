@@ -254,3 +254,82 @@
 .breadcrumbs-main-container {
     margin-bottom: 22px;
 }
+
+@media (max-width:768px) {
+    .similar-products-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 20px !important;
+    }
+
+    .productTile-main-container .product-details-container .product-name {
+        padding: 0 10px;
+    }
+
+    .main-image-container {
+        height: 380px;
+        margin-bottom: 24px;
+    }
+
+    .mini-image-container {
+        flex-direction: row;
+        column-gap: 26px;
+        justify-content: center;
+        margin-bottom: 24px;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .product-details-section {
+        padding: 12px !important;
+    }
+
+    .main-product-details-container .product-details-section .name-price-container .product-name {
+        font-size: 13px;
+    }
+
+    .main-product-details-container .product-details-section .name-price-container .product-price {
+        font-size: 16px;
+        margin: 0;
+
+        .price-strike {
+            font-size: 14px;
+        }
+
+        .price-discount {
+            font-size: 14px;
+        }
+    }
+
+    .main-product-details-container .product-details-section .description-category-container .product-desc {
+        font-size: 14px;
+    }
+
+    .main-product-details-container .product-details-section .description-category-container .product-category {
+        font-size: 14px;
+    }
+
+    .main-product-details-container .product-details-section .description-category-container .product-tags {
+        font-size: 14px;
+    }
+
+    .main-product-details-container .product-details-section .variation-pdp-buttons-container .variation-container {
+        column-gap: 9px;
+    }
+
+    .main-product-details-container .product-details-section .variation-pdp-buttons-container .pdp-btn-container {
+        column-gap: 12px !important;
+
+        button {
+            font-size: 11px !important;
+            column-gap: 4px !important;
+            height: 45px !important;
+
+            i {
+                font-size: 12px !important;
+            }
+        }
+    }
+}

@@ -136,3 +136,53 @@
         }
     }
 }
+
+@media (max-width:768px) {
+    .cart-product-card-container {
+        width: auto;
+        padding: 10px;
+
+        .cart-image-container {
+            img {
+                height: 104px;
+            }
+        }
+
+        .cart-product-details-section {
+            .product-name {
+                font-size: 14px;
+            }
+
+            .product-price {
+                font-size: 14px;
+
+                .price-strike {
+                    font-size: 12px;
+                }
+
+                .price-discount {
+                    font-size: 12px;
+                }
+            }
+
+            .return-policy-container {
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            .buttons-container {
+                column-gap: 6px !important;
+                
+                button {
+                    font-size: 12px !important;
+                }
+            }
+        }
+    }
+}
