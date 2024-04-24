@@ -10,9 +10,10 @@ function ToastMessage (props) {
                         <div className="icon"><i class="bi bi-check2"></i></div>
                         <div className="message">{props.message}</div>
                     </div>
-                    <Link to='/cart' className="view-cart"><button>View Cart</button></Link>
+                    <Link to='/cart' className={`view-cart ${props.viewbutton === 'cart' ? '' : 'd-none'}`}><button>View Cart</button></Link>
+                    <Link to='/wishlist' className={`view-wishlist ${props.viewbutton === 'wishlist' ? '' : 'd-none'}`}><button>View Wishlist</button></Link>
                 </div>
-                <div className="progress"></div>
+                <div className="progress "></div>
             </div>
             
         )

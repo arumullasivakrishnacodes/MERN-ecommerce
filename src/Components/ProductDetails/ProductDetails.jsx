@@ -30,12 +30,16 @@ function ProductDetails (props) {
         }
     };
 
-    const handleAddToWishlist = (productId) => {
-        addToWishlist(productId);
-        // window.scrollTo({
-        //     top: 0,
-        //     behavior: 'smooth' // Optional, smooth scrolling animation
-        // });
+    const handleAddToWishlist = async (productId) => {
+        try {
+            await addToWishlist(productId);
+            setToastMessage('Product added to Wishlist');
+            setToastStatus(true);
+        } catch (error) {
+            setToastMessage('Something went wrong try again later!');
+            setToastStatus(false);
+        }
+        
     }
 
     useEffect(() => {
@@ -54,7 +58,7 @@ function ProductDetails (props) {
 
     return (
         <>
-            <ToastMessage message={toastmessage} success={toaststatus}/>
+            <ToastMessage message={toastmessage} success={toaststatus} viewbutton={toastmessage === 'Product added to Cart' ? 'cart' : 'wishlist'}/>
             <BreadCrumbs home='Home' category={product.category} pname={product.name}/>
             <div className="productdetails-main-container row">
                 <div className="col-lg-2 col-12 mini-image-container d-none d-lg-flex">

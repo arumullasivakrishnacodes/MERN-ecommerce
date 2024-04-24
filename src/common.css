@@ -114,3 +114,53 @@
         background: var(--white);
     }
 }
+
+.modal-header {
+    border: 0;
+}
+
+.confirm-msg {
+    font-size: 16px;
+}
+
+.modal-body {
+    border-top: 1px solid var(--gray-shade-border);
+    border-bottom: 1px solid var(--gray-shade-border);
+}
+
+.modal-header .close {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    border: none;
+    outline: none;
+
+    i {
+        font-size: 32px;
+        color: var(--light-pink);
+    }
+}
+
+.btn-primary:focus {
+    box-shadow: none;
+    background-color: var(--white) !important;
+    border: none !important;
+    outline: none !important;
+}
+
+@media (max-width:768px) {
+    .modal-header {
+        border: 0;
+    }
+
+    .confirm-msg {
+        font-size: 12px;
+    }
+
+    .modal-footer {
+        padding: 0 24px;
+    }
+}
