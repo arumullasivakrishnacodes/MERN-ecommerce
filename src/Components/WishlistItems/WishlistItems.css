@@ -18,7 +18,7 @@
             width: 70%;
             height: 4px;
             background: var(--primary-blue);
-            border-radius: 20px;
+            border: 1px solid var(--gray-shade-border);
             margin-left: 14%;
         }
     }
@@ -27,7 +27,7 @@
         width: 100%;
         height: 4px;
         background: var(--primary-blue);
-        border-radius: 20px;
+        border: 1px solid var(--gray-shade-border);
     }
 }
 
@@ -43,8 +43,7 @@
 
     .wishlist-each-item-container {
         padding: 10px;
-        border: 1px solid #ebebeb;
-        border-radius: 20px;
+        border: 1px solid var(--gray-shade-border);
 
         .wishlist-buttons-container {
             display: grid;
@@ -57,7 +56,7 @@
                 height: 45px;
                 border: 1px solid var(--red);
                 outline: none;
-                border-radius: 10px;
+                border: 1px solid var(--gray-shade-border);
                 background: #cc00009c;
                 color: var(--white);
                 font-size: 16px;
@@ -68,7 +67,6 @@
                 height: 45px;
                 border: 1px solid var(--green);
                 outline: none;
-                border-radius: 10px;
                 background: #1e95419e;
                 color: var(--white);
                 font-size: 16px;
@@ -112,7 +110,6 @@
             padding: 12px 22px;
             background: var(--white);
             border: 1px solid var(--primary-blue);
-            border-radius: 10px;
             color: var(--primary-blue);
         }
     }

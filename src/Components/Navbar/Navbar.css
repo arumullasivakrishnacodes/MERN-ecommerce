@@ -2,7 +2,7 @@
     width: 86vw;
     background: var(--white);
     height: 80px;
-    border-radius: 15px;
+    border: 1px solid var(--gray-shade-border);
     position: absolute;
     top: 0;
     left: 0;
@@ -16,11 +16,18 @@
     .logo-container {
         font-size: 42px;
         font-weight: 600;
-        letter-spacing: 6px;
-        color: var(--primary-blue);
+        color: var(--black);
         display: flex;
         justify-content: flex-start;
         align-items: center;
+
+        span {
+            img {
+                width: 42px;
+                height: 42px;
+                margin-top: -12px;
+            }
+        }
     }
 
     .navbar-category-container {
@@ -46,7 +53,7 @@
                 row-gap: 8px;
                 width: 60%;
                 height: 4px;
-                border-radius: 20px;
+                border: 1px solid var(--gray-shade-border);
                 background: var(--primary-blue);
                 margin-left: 19%;
             }
@@ -76,7 +83,7 @@
             position: absolute;
             width: 16px;
             height: 16px;
-            border-radius: 50%;
+            border: 1px solid var(--gray-shade-border);
             background: var(--primary-blue);
             color: var(--white);
             margin-top: -5px;
@@ -89,7 +96,7 @@
             position: absolute;
             width: 16px;
             height: 16px;
-            border-radius: 50%;
+            border: 1px solid var(--gray-shade-border);
             background: var(--primary-blue);
             color: var(--white);
             margin-top: -5px;
@@ -114,10 +121,11 @@
 
     .search-engine-components {
         background: var(--white);
-        border-radius: 15px;
+        border: 1px solid var(--gray-shade-border);
         width: 75%;
-        height: 75%;
+        height: 600px;
         padding: 2% 3%;
+        position: relative;
 
         .popupclose {
             width: 40px;
@@ -128,8 +136,8 @@
             justify-content: center;
             align-items: center;
             position: absolute;
-            top: 11.5%;
-            right: 11.5%;
+            top: -1.5%;
+            right: -1.5%;
             cursor: pointer;
 
             i {
@@ -297,7 +305,6 @@
     height: fit-content;
     background: var(--gray-shade);
     border: 1px solid var(--gray-shade-border);
-    border-radius: 10px;
     box-shadow: var(--box-shadow);
     position: fixed;
     z-index: 2;
@@ -336,6 +343,10 @@
 
     .productTile-main-container {
         height: 310px !important;
+
+        .product-name {
+            margin: 12px 0;
+        }
     }
 
     .slick-slider, .slick-list, .slick-track {

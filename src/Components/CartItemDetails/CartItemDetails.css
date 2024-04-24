@@ -16,7 +16,6 @@
             align-items: center;
             border: 1px solid var(--gray-shade-border);
             padding: 12px;
-            border-radius: 15px;
 
             .heading-section {
                 display: flex;
@@ -41,7 +40,7 @@
                 border: 1px solid var(--primary-blue);
                 color: var(--primary-blue);
                 font-weight: 600px;
-                border-radius: 15px;
+                border: 1px solid var(--primary-blue);
                 background: var(--white);
                 outline: none;
             }
@@ -55,7 +54,6 @@
         background: var(--gray-shade);
         border: 1px solid var(--gray-shade-border);
         margin-bottom: 24px;
-        border-radius: 8px;
 
         .heading {
             text-align: left;
@@ -82,7 +80,6 @@
         padding: 24px;
         background: var(--gray-shade);
         border: 1px solid var(--gray-shade-border);
-        border-radius: 8px;
 
         .total-price {
             display: flex;
@@ -103,7 +100,7 @@
             outline: none;
             background: var(--primary-blue);
             color: var(--white);
-            border-radius: 8px;
+            border: 1px solid var(--gray-shade-border);
         }
     }
 }

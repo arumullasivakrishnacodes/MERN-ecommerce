@@ -3,11 +3,13 @@ import '../Footer/Footer.css';
 import whatsappImg from '../../Assets/Images/whatsapp-icon.png';
 import instagramImg from '../../Assets/Images/instagram-icon.png';
 import twitterxImg from '../../Assets/Images/twitter-icon.png';
+import BagIcon from '../../Assets/Images/shop-bag-image.png';
+import { Link } from "react-router-dom";
 
 function Footer () {
     return (
         <div className="footer-main-container">
-            <div className="logo-container">SHOP</div>
+            <Link to='/'><div className="logo-container"><span><img src={BagIcon} alt="" /></span>SHOP</div></Link>
             <div className="footer-links-container">
                 <div className="footer-link">About</div>
                 <div className="footer-link">Offers</div>

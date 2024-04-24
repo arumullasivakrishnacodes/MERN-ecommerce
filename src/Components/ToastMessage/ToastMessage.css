@@ -1,5 +1,5 @@
 .toast-message-main-container {
-    border-radius: 10px;
+    border: 1px solid var(--gray-shade-border);
     background: var(--white);
     box-shadow: var(--box-shadow);
     position: fixed;
@@ -21,7 +21,7 @@
     width: fit-content;
     height: fit-content;
     padding: 12px 24px;
-    border-radius: 10px;
+    border: 1px solid var(--gray-shade-border);
     background: var(--white);
 
     .message-div {
@@ -61,7 +61,6 @@
             font-size: 14px;
             text-decoration: none;
             cursor: pointer;
-            border-radius: 10px;
             outline: none;
         }
         

@@ -53,7 +53,7 @@ function Navbar () {
     return (
         <>
         <div className="navbar-main-container row d-none d-lg-flex">
-            <NavLink to="/"><div className="logo-container col-3">SHOP</div></NavLink>
+            <NavLink to="/"><div className="logo-container col-3"><span><img src={BagIcon} alt="" /></span>SHOP</div></NavLink>
             <div className="navbar-category-container col-4">
                 <NavLink to='/men'><div className="category">Men</div></NavLink>
                 <NavLink to='/women'><div className="category">Women</div></NavLink>
