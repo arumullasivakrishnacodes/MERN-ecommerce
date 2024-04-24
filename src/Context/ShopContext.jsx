@@ -50,8 +50,15 @@ const ShopContextProvider = (props) => {
         const wishListItemsLength = wishListItems.length;
         setWishlistItemsCount(wishListItemsLength);
     }, [wishListItems])
+
+    const ScrollTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth' // Optional, smooth scrolling animation
+        });
+    }
     
-    const productsData = {ProductsData, cartItems, wishListItems, cartItemsCount, wishlistItemsCount, cartTotalPrice, addToCart, addToWishlist, removeCartItem, removeWishlistItem};
+    const productsData = {ProductsData, cartItems, wishListItems, cartItemsCount, wishlistItemsCount, cartTotalPrice, addToCart, addToWishlist, removeCartItem, removeWishlistItem, ScrollTop};
 
     return (
         <ShopContext.Provider value={productsData}>

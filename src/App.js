@@ -11,14 +11,15 @@ import PLP from './Pages/PLP';
 import PDP from './Pages/PDP';
 import ScrollImage from '../src/Assets/Images/scrolltop-btn.png';
 import './common.css';
+import { useContext } from 'react';
+import { ShopContext } from './Context/ShopContext';
 
 
 function App() {
-  const ScrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // Optional, smooth scrolling animation
-    });
+  const {ScrollTop} = useContext(ShopContext);
+
+  const handleScrollTop = () => {
+    ScrollTop();
   }
 
   return (
@@ -39,7 +40,7 @@ function App() {
             </Route>
           </Routes>
       </div>
-      <div className='scrolltop-container' onClick={ScrollTop}><img src={ScrollImage} alt="scrollTo" /></div>
+      <div className='scrolltop-container' onClick={handleScrollTop}><img src={ScrollImage} alt="scrollTo" /></div>
       <Footer />
 
     </div>

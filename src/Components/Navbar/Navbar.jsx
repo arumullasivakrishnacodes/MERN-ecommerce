@@ -93,9 +93,9 @@ function Navbar () {
                                 <Link to='/kids' onClick={searchCategoryClick}><div className="category">Kids</div></Link>
                             </div>
                         </div>
-                        <div className="search-related-products-container">
+                        <div className={`search-related-products-container ${filteredProducts.length > 0 ? '' : 'd-none'}`}>
                             <div className="heading">Related Products</div>
-                            <div className="related-products-container">
+                            <div className={`related-products-container`}>
                                 {
                                     filteredProducts.slice(0,4).map((product,index) => {
                                         return <ProductTile product={product} key={index} />
@@ -111,7 +111,7 @@ function Navbar () {
 
         <div className="mobile-navbar-main-container-top d-lg-none">
             <div className="col-1 hamburger-menu" onClick={handleHamburger}><i className={`bi bi-list ${hamburgerOpen ? 'd-none' : ''}`}></i> <i className={`bi bi-x ${hamburgerOpen ? '' : 'd-none'}`}></i></div>
-            <div className="col-5 nav-bar-logo" ><img src={BagIcon} alt="" /> <span>SHOP</span></div>
+            <NavLink to="/"><div className="col-5 nav-bar-logo" ><img src={BagIcon} alt="" /> <span>SHOP</span></div></NavLink>
             <div className="col-6 nav-icons">
                 <img src={searchIcon} onClick={handleSearchEnable} alt="" />
                 <NavLink to="/wishlist"><img src={wishlistIcon} alt="wishlist" /><span className="wishlist-count">{wishlistItemsCount}</span></NavLink>
@@ -120,9 +120,9 @@ function Navbar () {
         </div>
 
         <div className={`hamburgermenu-main-container ${hamburgerOpen ? 'hamburger-active' : ''}`}>
-            <NavLink to="/men"><div className="hamburger-category">Men</div></NavLink>
-            <NavLink to="/women"><div className="hamburger-category">Women</div></NavLink>
-            <NavLink to="/kids"><div className="hamburger-category">Kids</div></NavLink>
+            <NavLink to="/men"><div className="hamburger-category" onClick={handleHamburger}>Men</div></NavLink>
+            <NavLink to="/women"><div className="hamburger-category" onClick={handleHamburger}>Women</div></NavLink>
+            <NavLink to="/kids"><div className="hamburger-category" onClick={handleHamburger}>Kids</div></NavLink>
         </div>
 
         <div className="mobile-navbar-main-container-bottom d-lg-none">

@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import '../Footer/Footer.css';
 import whatsappImg from '../../Assets/Images/whatsapp-icon.png';
 import instagramImg from '../../Assets/Images/instagram-icon.png';
 import twitterxImg from '../../Assets/Images/twitter-icon.png';
 import BagIcon from '../../Assets/Images/shop-bag-image.png';
 import { Link } from "react-router-dom";
+import { ShopContext } from "../../Context/ShopContext";
 
 function Footer () {
+    const {ScrollTop} = useContext(ShopContext);
+
+    const handleScrollTop = () => {
+        ScrollTop();
+    }
+
     return (
         <div className="footer-main-container">
-            <Link to='/'><div className="logo-container"><span><img src={BagIcon} alt="" /></span>SHOP</div></Link>
+            <Link to='/'  onClick={handleScrollTop()}><div className="logo-container"><span><img src={BagIcon} alt="" /></span>SHOP</div></Link>
             <div className="footer-links-container">
                 <div className="footer-link">About</div>
                 <div className="footer-link">Offers</div>

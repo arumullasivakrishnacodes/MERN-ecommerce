@@ -38,11 +38,13 @@
         }
 
         .product-name {
-            margin: 12px;
+            margin: 12px 0;
             font-size: 13px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            padding: 0;
+            padding-left: 12px;
         }
 
         .product-price {
@@ -79,7 +81,8 @@
     .productTile-main-container .product-details-container .product-name {
         font-size: 10px;
         margin: 0;
-        padding: 0 12px;
+        padding: 0 !important;
+        padding-left: 10px !important;
         margin-bottom: 10px;
     }
 

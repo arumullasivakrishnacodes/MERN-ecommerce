@@ -13,7 +13,7 @@
 
 @media (max-width:768px) {
     .breadcrumbs-main-container {
-        margin-bottom: 12px;
+        margin-bottom: 0;
         padding: 8px 12px;
 
         p {

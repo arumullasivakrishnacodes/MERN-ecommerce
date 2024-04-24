@@ -82,11 +82,11 @@ function ProductDetails (props) {
                         <div className="variation-pdp-buttons-container">
                             <p className="variation-heading">Size:</p>
                             <div className="variation-container">
-                                <div className="variation variation-active">S</div>
-                                <div className="variation">M</div>
-                                <div className="variation">L</div>
-                                <div className="variation">XL</div>
-                                <div className="variation">XXL</div>
+                                <div className="variation variation-active d-flex justify-content-center align-items-center">S</div>
+                                <div className="variation d-flex justify-content-center align-items-center">M</div>
+                                <div className="variation d-flex justify-content-center align-items-center">L</div>
+                                <div className="variation d-flex justify-content-center align-items-center">XL</div>
+                                <div className="variation d-flex justify-content-center align-items-center">XXL</div>
                             </div>
                             <div className="pdp-btn-container">
                                 <button className="addtowishlist" onClick={() => {handleAddToWishlist(product.id)}}>MOVE TO WISHLIST <i class="bi bi-heart-fill"></i></button>

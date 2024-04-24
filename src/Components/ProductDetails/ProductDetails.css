@@ -215,7 +215,7 @@
                     background: var(--white);
                     border: 1px solid var(--light-pink);
                     outline: none;
-                    border: 1px solid var(--gray-shade-border);
+                    border: 1px solid var(--light-pink);
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -255,6 +255,9 @@
 }
 
 @media (max-width:768px) {
+    .breadcrumbs-main-container { 
+        margin-bottom: 0;
+    }
     .similar-products-grid {
         grid-template-columns: 1fr 1fr !important;
         gap: 20px !important;
