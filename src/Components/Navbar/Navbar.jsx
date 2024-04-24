@@ -1,19 +1,24 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import '../Navbar/Navbar.css';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import cartIcon from '../../Assets/Images/cart-icon.png';
 import wishlistIcon from '../../Assets/Images/wishlist-icon.png'
 import profileIcon from '../../Assets/Images/profile-icon.png';
 import searchIcon from '../../Assets/Images/search-icon.png';
 import MicImg from '../../Assets/Images/mic-image.png'
 import { ShopContext } from "../../Context/ShopContext";
-import BagIcon from '../../Assets/Images/shop-bag-image.png'
+import BagIcon from '../../Assets/Images/shop-bag-image.png';
+import TopSellers from '../TopSellers/TopSellers'
+import ProductTile from "../ProductTile/ProductTile";
 
 function Navbar () {
+    const {ProductsData} = useContext(ShopContext)
     const {cartItemsCount, wishlistItemsCount} = useContext(ShopContext);
     const [searchenabled, setSearchEnabled] = useState(false);
     const [searchinpvalue, setSearchinpValue] = useState('');
     const [hamburgerOpen, setHamburhetOpen] = useState(false);
+    const [searchResults, setSearchResults] = useState(false);
+    const [filteredProducts, setFilteredProducts] = useState([]);
 
     const handleSearchEnable = () => {
         setSearchEnabled(!searchenabled);
@@ -26,6 +31,24 @@ function Navbar () {
     const handleHamburger = () => {
         setHamburhetOpen(!hamburgerOpen)
     }
+
+    const searchCategoryClick = () => {
+        setSearchEnabled(!searchenabled)
+    }
+
+    useEffect(() => {
+        if (searchinpvalue.length < 3) {
+            setSearchResults(false);
+        } else {
+            setSearchResults(true);
+            // Introducing a delay before filtering products
+            setTimeout(() => {
+                const enteredKeyword = searchinpvalue.toLowerCase();
+                const searchRelatedProducts = ProductsData.filter(product => product.name.toLowerCase().includes(enteredKeyword));
+                setFilteredProducts(searchRelatedProducts);
+            }, 1000); // Adjust the delay time as needed
+        }
+    }, [searchinpvalue, ProductsData]);
 
     return (
         <>
@@ -49,6 +72,37 @@ function Navbar () {
                     <div>
                         <input className="main-search-input" type="text" placeholder="Search for products ..." value={searchinpvalue}  onChange={handleSearchKeywords}/>
                         <img className="mic-image" src={MicImg} alt="" />
+                    </div>
+                    <div className={`search-top-sellers-container ${!searchResults ? '': 'd-none'}`}>
+                        <div className="category-section-main">
+                            <div className="heading">Categories</div>
+                            <div className="category-section">
+                                <Link to='/men' onClick={searchCategoryClick}><div className="category">Men</div></Link>
+                                <Link to='/women' onClick={searchCategoryClick}><div className="category">Women</div></Link>
+                                <Link to='/kids' onClick={searchCategoryClick}><div className="category">Kids</div></Link>
+                            </div>
+                        </div>
+                        <TopSellers />
+                    </div>
+                    <div className={`search-top-sellers-container ${searchResults ? '': 'd-none'}`}>
+                        <div className="category-section-main">
+                            <div className="heading">Categories</div>
+                            <div className="category-section">
+                                <Link to='/men' onClick={searchCategoryClick}><div className="category">Men</div></Link>
+                                <Link to='/women' onClick={searchCategoryClick}><div className="category">Women</div></Link>
+                                <Link to='/kids' onClick={searchCategoryClick}><div className="category">Kids</div></Link>
+                            </div>
+                        </div>
+                        <div className="search-related-products-container">
+                            <div className="heading">Related Products</div>
+                            <div className="related-products-container">
+                                {
+                                    filteredProducts.slice(0,4).map((product,index) => {
+                                        return <ProductTile product={product} key={index} />
+                                    })
+                                }
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
