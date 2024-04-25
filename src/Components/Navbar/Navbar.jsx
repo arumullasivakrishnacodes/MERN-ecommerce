@@ -65,49 +65,51 @@ function Navbar () {
                 <NavLink to="/wishlist"><img src={wishlistIcon} alt="wishlist" /><span className="wishlist-count">{wishlistItemsCount}</span></NavLink>
                 <NavLink to="/cart"><img src={cartIcon} alt="cart" /><span className="cart-count">{cartItemsCount}</span></NavLink>
             </div>
-            
-            <div className={`search-popup-container ${searchenabled ? '' : 'd-none'}`}>
-                <div className="search-engine-components">
-                    <div className="popupclose" onClick={handleSearchEnable}><i class="bi bi-x"></i></div>
-                    <div>
-                        <input className="main-search-input" type="text" placeholder="Search for products ..." value={searchinpvalue}  onChange={handleSearchKeywords}/>
-                        <img className="mic-image" src={MicImg} alt="" />
-                    </div>
-                    <div className={`search-top-sellers-container ${!searchResults ? '': 'd-none'}`}>
-                        <div className="category-section-main">
-                            <div className="heading">Categories</div>
-                            <div className="category-section">
-                                <Link to='/men' onClick={searchCategoryClick}><div className="category">Men</div></Link>
-                                <Link to='/women' onClick={searchCategoryClick}><div className="category">Women</div></Link>
-                                <Link to='/kids' onClick={searchCategoryClick}><div className="category">Kids</div></Link>
-                            </div>
-                        </div>
-                        <TopSellers />
-                    </div>
-                    <div className={`search-top-sellers-container ${searchResults ? '': 'd-none'}`}>
-                        <div className="category-section-main">
-                            <div className="heading">Categories</div>
-                            <div className="category-section">
-                                <Link to='/men' onClick={searchCategoryClick}><div className="category">Men</div></Link>
-                                <Link to='/women' onClick={searchCategoryClick}><div className="category">Women</div></Link>
-                                <Link to='/kids' onClick={searchCategoryClick}><div className="category">Kids</div></Link>
-                            </div>
-                        </div>
-                        <div className={`search-related-products-container ${filteredProducts.length > 0 ? '' : 'd-none'}`}>
-                            <div className="heading">Related Products</div>
-                            <div className={`related-products-container`}>
-                                {
-                                    filteredProducts.slice(0,4).map((product,index) => {
-                                        return <ProductTile product={product} key={index} />
-                                    })
-                                }
-                            </div>
-                        </div>
-                    </div>
-                    
+        </div>
+
+        
+        <div className={`search-popup-container ${searchenabled ? '' : 'd-none'}`}>
+            <div className="search-engine-components">
+                <div className="popupclose" onClick={handleSearchEnable}><i class="bi bi-x"></i></div>
+                <div>
+                    <input className="main-search-input" type="text" placeholder="Search for products ..." value={searchinpvalue}  onChange={handleSearchKeywords}/>
+                    <img className="mic-image" src={MicImg} alt="" />
                 </div>
+                <div className={`search-top-sellers-container ${!searchResults ? '': 'd-none'}`}>
+                    <div className="category-section-main">
+                        <div className="heading">Categories</div>
+                        <div className="category-section">
+                            <Link to='/men' onClick={searchCategoryClick}><div className="category">Men</div></Link>
+                            <Link to='/women' onClick={searchCategoryClick}><div className="category">Women</div></Link>
+                            <Link to='/kids' onClick={searchCategoryClick}><div className="category">Kids</div></Link>
+                        </div>
+                    </div>
+                    <TopSellers />
+                </div>
+                <div className={`search-top-sellers-container ${searchResults ? '': 'd-none'}`}>
+                    <div className="category-section-main">
+                        <div className="heading">Categories</div>
+                        <div className="category-section">
+                            <Link to='/men' onClick={searchCategoryClick}><div className="category">Men</div></Link>
+                            <Link to='/women' onClick={searchCategoryClick}><div className="category">Women</div></Link>
+                            <Link to='/kids' onClick={searchCategoryClick}><div className="category">Kids</div></Link>
+                        </div>
+                    </div>
+                    <div className={`search-related-products-container ${filteredProducts.length > 0 ? '' : 'd-none'}`}>
+                        <div className="heading">Related Products</div>
+                        <div className={`related-products-container`}>
+                            {
+                                filteredProducts.slice(0,4).map((product,index) => {
+                                    return <ProductTile product={product} key={index} />
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
+
 
         <div className="mobile-navbar-main-container-top d-lg-none">
             <div className="col-1 hamburger-menu" onClick={handleHamburger}><i className={`bi bi-list ${hamburgerOpen ? 'd-none' : ''}`}></i> <i className={`bi bi-x ${hamburgerOpen ? '' : 'd-none'}`}></i></div>

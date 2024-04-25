@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import '../ProductDetails/ProductDetails.css';
 import all_product from '../../Assets/Data/all_product';
 import ProductTile from '../../Components/ProductTile/ProductTile'
@@ -9,19 +9,31 @@ import { Link } from "react-router-dom";
 function ProductDetails (props) {
     const product = props.product;
     const filteredProducts = all_product.filter((element) => {return element.category === product.category})
-    const {addToCart, addToWishlist} = useContext(ShopContext);
+    const {addToCart, addToWishlist, cartItems} = useContext(ShopContext);
+    const [itemInCart, setItemInCart] = useState(false)
 
     const handleaddToCart = async (productId) => {
+        const quantity = 1;
         try {
           // Assuming addToCart is an asynchronous function that returns a promise
-          await addToCart(productId);
+          await addToCart(productId, quantity);
           // If addToCart succeeds, you can do something here if needed
         } catch (error) {
           // If addToCart fails, you can handle the error here
           // Perform actions based on your requirements, e.g., show an error message to the user
           // For simplicity, let's just log the error here
+          console.log(error);
         }
     };
+
+    useEffect(() => {
+        const CheckItemInCart = cartItems.filter(item => item.id === props.product.id);
+        if (CheckItemInCart.length > 0) {
+            setItemInCart(true)
+        } else {
+            setItemInCart(false)
+        }
+    },[cartItems, props.product.id])
 
     const handleAddToWishlist = async (productId) => {
         try {
@@ -30,6 +42,13 @@ function ProductDetails (props) {
             // throw error
         }
         
+    }
+
+    const handleScrollPage = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth' // Optional, smooth scrolling animation
+        });
     }
 
 
@@ -71,8 +90,8 @@ function ProductDetails (props) {
                             </div>
                             <div className="pdp-btn-container">
                                 <button className="addtowishlist" onClick={() => {handleAddToWishlist(product.id)}}>MOVE TO WISHLIST <i class="bi bi-heart-fill"></i></button>
-                                <button className="addtocart" onClick={() => {handleaddToCart(product.id)}}>ADD TO CART <i class="bi bi-cart3"></i></button>
-                                <Link to='/cart'><button className="addtocart d-none" >GO TO CART <i class="bi bi-cart3"></i></button></Link>
+                                <button className={`addtocart ${itemInCart ? 'd-none' : ''}`} onClick={() => {handleaddToCart(product.id)}}>ADD TO CART <i class="bi bi-cart3"></i></button>
+                                <Link to='/cart' className={` w-50 ${itemInCart ? '' : 'd-none'}`} onClick={handleScrollPage}><button className={`addtocart w-100 p-3 ${itemInCart ? '' : 'd-none'}`} >GO TO CART <i class="bi bi-cart3"></i></button></Link>
                             </div>
                         </div>
                     

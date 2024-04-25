@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import '../CartProductCard/CartProductCard.css';
 import returnImage from '../../Assets/Images/returnimage.png';
 import { ShopContext } from "../../Context/ShopContext";
@@ -6,7 +6,12 @@ import { NavLink } from "react-router-dom";
 
 function CartProductCard (props) {
     const product = props.product;
-    const {removeCartItem, addToWishlist} = useContext(ShopContext)
+    const {removeCartItem, addToWishlist, addToCart} = useContext(ShopContext);
+    const [qtyselected, setqtySelected] = useState(1);
+
+    useEffect(()=> {
+        setqtySelected(product.qty);
+    }, [product.qty])
 
     const deleteProduct = (productID) => {
         removeCartItem(productID);
@@ -15,6 +20,11 @@ function CartProductCard (props) {
     async function hamdleAddToWishlist  (productID)  {
         await addToWishlist(productID);
         await deleteProduct(productID);
+    }
+
+    const handleChangeProductQuantity = (productId,e) => {
+        const quantityValue = Number(e.target.innerHTML);
+        addToCart(productId, quantityValue)
     }
 
     return (
@@ -95,7 +105,7 @@ function CartProductCard (props) {
                     </div>
 
 
-                    <div className="quantity btn" data-toggle="modal" data-target={`#cartProductQuantity${product.id}`}>Qty: <span>1</span> <span><i class="bi bi-caret-down-fill"></i></span></div>
+                    <div className="quantity btn" data-toggle="modal" data-target={`#cartProductQuantity${product.id}`}>Qty: <span>{product.qty}</span> <span><i class="bi bi-caret-down-fill"></i></span></div>
 
                     <div class="modal fade" id={`cartProductQuantity${product.id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -115,11 +125,11 @@ function CartProductCard (props) {
                                     </div>
                                 </div>
                                 <div className="modal-quantity-container">
-                                    <div className="modal-quantity d-flex justify-content-center align-items-center active">1</div>
-                                    <div className="modal-quantity d-flex justify-content-center align-items-center">2</div>
-                                    <div className="modal-quantity d-flex justify-content-center align-items-center">3</div>
-                                    <div className="modal-quantity d-flex justify-content-center align-items-center">4</div>
-                                    <div className="modal-quantity d-flex justify-content-center align-items-center">5</div>
+                                    <div className={`modal-quantity d-flex justify-content-center align-items-center ${qtyselected === 1 ? 'active' : ''}`} data-dismiss="modal" onClick={(e) => handleChangeProductQuantity(product.id, e)}>1</div>
+                                    <div className={`modal-quantity d-flex justify-content-center align-items-center ${qtyselected === 2 ? 'active' : ''}`} data-dismiss="modal" onClick={(e) => handleChangeProductQuantity(product.id, e)}>2</div>
+                                    <div className={`modal-quantity d-flex justify-content-center align-items-center ${qtyselected === 3 ? 'active' : ''}`} data-dismiss="modal" onClick={(e) => handleChangeProductQuantity(product.id, e)}>3</div>
+                                    <div className={`modal-quantity d-flex justify-content-center align-items-center ${qtyselected === 4 ? 'active' : ''}`} data-dismiss="modal" onClick={(e) => handleChangeProductQuantity(product.id, e)}>4</div>
+                                    <div className={`modal-quantity d-flex justify-content-center align-items-center ${qtyselected === 5 ? 'active' : ''}`} data-dismiss="modal" onClick={(e) => handleChangeProductQuantity(product.id, e)}>5</div>
                                 </div>
                             </div>
                             <div class="modal-footer">

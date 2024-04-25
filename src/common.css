@@ -120,6 +120,10 @@
 
 .confirm-msg {
     font-size: 16px;
+    color: var(--red);
+    text-align: left;
+    font-weight: 500;
+    margin: 0 18px;
 }
 
 .modal-body {

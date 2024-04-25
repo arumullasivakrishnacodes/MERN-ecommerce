@@ -10,11 +10,17 @@ const ShopContextProvider = (props) => {
     const [cartTotalPrice, setCartTotalPrice] = useState(0)
     const [wishListItems, setWishlistItems] = useState([]);
 
-    const addToCart = (itemId) => {
-        const cartItem = ProductsData.find((e) => e.id === Number(itemId));
-        setCartItems([...cartItems, cartItem]);
-        setCartItemsCount(cartItems.length);
-    }
+    const addToCart = (itemId, quantity) => {
+        const productExistinCart = cartItems.find((e) => e.id === Number(itemId));
+        if (productExistinCart) {
+            productExistinCart.qty = quantity;
+            setCartItems([...cartItems]);
+        } else {
+            const cartItem = ProductsData.find((e) => e.id === Number(itemId));
+            setCartItems([...cartItems, {...cartItem, qty: 1 }]); 
+        }
+        
+    };
 
     const removeCartItem = (itemId) => {
         const updatedProducts = cartItems.filter((product) =>{ return product.id !== itemId});
@@ -34,17 +40,25 @@ const ShopContextProvider = (props) => {
     const getCartTotalPrice = useCallback(() => {
         let totalPrice = 0;
         cartItems.map((eachItem) => {
-            return  totalPrice += Number(eachItem.new_price)
+            return  totalPrice += Number(eachItem.new_price * eachItem.qty)
         })
         setCartTotalPrice(totalPrice);
     }, [cartItems]);
 
+    const getCartTotalCount = useCallback(() => {
+        let totalCartCount = 0;
+        cartItems.map((eachItem) => {
+            return  totalCartCount += Number(eachItem.qty)
+        })
+        setCartItemsCount(totalCartCount);
+    }, [cartItems]);
+
     
     useEffect(() => {
-        const cartItemsLength = cartItems.length;
-        setCartItemsCount(cartItemsLength);
+        getCartTotalCount();
         getCartTotalPrice();
-    }, [cartItems, getCartTotalPrice]);
+        console.log(cartItems);
+    }, [cartItems, getCartTotalPrice, getCartTotalCount]);
 
     useEffect(() => {
         const wishListItemsLength = wishListItems.length;

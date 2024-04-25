@@ -18,8 +18,8 @@ function App() {
     window.scrollTo({
       top: 0,
       behavior: 'smooth' // Optional, smooth scrolling animation
-  });
-}
+    });
+  }
 
   return (
     <BrowserRouter>

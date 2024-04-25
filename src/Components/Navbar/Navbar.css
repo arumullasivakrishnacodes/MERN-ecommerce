@@ -308,7 +308,7 @@
     z-index: 2;
     top: 70px;
     left: -100%;
-    transition: all 0.6s ease-in;
+    transition: all 0.3s ease-in;
 
     .active {
         .hamburger-category {
@@ -402,6 +402,63 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 24px;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .search-engine-components {
+        width: 95% !important;
+        min-height: 600px !important;
+        height: fit-content !important;
+        margin-top: 8%;
+
+        .related-products-container {
+            grid-template-columns: 1fr 1fr !important;
+        }
+
+        .productTile-main-container {
+            height: 250px !important;
+
+            .product-name {
+                margin: 0 !important;
+            }
+        }
+
+        .main-search-input {
+            height: 45px !important;
+            font-size: 12px !important;
+            width: 80% !important;
+            padding: 0 !important;
+            margin-bottom: 24px !important;
+        }
+
+        .mic-image {
+            width: 25px !important;
+            height: 25px !important;
+        }
+
+        .category-section-main {
+            .heading {
+                font-size: 14px;
+            }
+
+            .category {
+                font-size: 12px;
+                height: fit-content;
+                padding: 8px 14px;
+            }
+        }
+
+        .search-related-products-container {
+            .heading {
+                font-size: 14px;
+            }
+        }
+
+        .search-top-sellers-container {
+            max-height: 498px !important;
+            overflow: scroll;
         }
     }
 }
