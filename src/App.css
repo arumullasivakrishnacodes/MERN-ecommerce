@@ -13,7 +13,6 @@
   background: var(--white);
   width: 100%;
   height: fit-content;
-  box-shadow: var(--box-shadow);
   border: 1px solid var(--gray-shade-border);
   padding: 12px;
   margin-bottom: 3%;
@@ -21,7 +20,6 @@
 
 .plp-main-container {
   background: var(--white);
-  box-shadow: var(--box-shadow);
   border: 1px solid var(--gray-shade-border);
   padding: 24px;
   background: var(--primary-whitesmoke);

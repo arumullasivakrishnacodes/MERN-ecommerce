@@ -1,7 +1,6 @@
 .toast-message-main-container {
     border: 1px solid var(--gray-shade-border);
     background: var(--white);
-    box-shadow: var(--box-shadow);
     position: fixed;
     z-index: 10;
     top: 20%;

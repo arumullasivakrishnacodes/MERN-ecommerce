@@ -5,7 +5,6 @@
     height: fit-content;
     margin-bottom: 25px;
     padding: 22px;
-    box-shadow: var(--box-shadow);
 
     .cart-image-container {
         padding: 0;

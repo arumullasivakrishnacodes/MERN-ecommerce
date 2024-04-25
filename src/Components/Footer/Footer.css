@@ -1,6 +1,5 @@
 .footer-main-container {
     background: var(--white);
-    box-shadow: var(--box-shadow);
     width: 100%;
     height: fit-content;
     padding: 24px;

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import '../CartProductCard/CartProductCard.css';
 import returnImage from '../../Assets/Images/returnimage.png';
 import { ShopContext } from "../../Context/ShopContext";
+import { NavLink } from "react-router-dom";
 
 function CartProductCard (props) {
     const product = props.product;
@@ -19,7 +20,7 @@ function CartProductCard (props) {
     return (
         <div className="cart-product-card-container row">
             <div className="cart-image-container col-3">
-                <img src={product.image} alt="" />
+            <NavLink to={`/product/${product.id}`}><img src={product.image} alt="" /></NavLink>
             </div>
             <div className="cart-product-details-section col-9">
                 <div className="row">

@@ -1,30 +1,23 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import '../ProductDetails/ProductDetails.css';
 import all_product from '../../Assets/Data/all_product';
 import ProductTile from '../../Components/ProductTile/ProductTile'
 import BreadCrumbs from "../BreadCrumbs/BreadCrumbs";
 import { ShopContext } from "../../Context/ShopContext";
 import { Link } from "react-router-dom";
-import ToastMessage from "../ToastMessage/ToastMessage";
 
 function ProductDetails (props) {
     const product = props.product;
     const filteredProducts = all_product.filter((element) => {return element.category === product.category})
     const {addToCart, addToWishlist} = useContext(ShopContext);
-    const [toastmessage, setToastMessage] = useState('');
-    const [toaststatus, setToastStatus] = useState(0);
 
     const handleaddToCart = async (productId) => {
         try {
           // Assuming addToCart is an asynchronous function that returns a promise
           await addToCart(productId);
           // If addToCart succeeds, you can do something here if needed
-          setToastMessage('Product added to Cart');
-          setToastStatus(true);
         } catch (error) {
           // If addToCart fails, you can handle the error here
-          setToastMessage('Something went wrong try again later!');
-          setToastStatus(false);
           // Perform actions based on your requirements, e.g., show an error message to the user
           // For simplicity, let's just log the error here
         }
@@ -33,32 +26,16 @@ function ProductDetails (props) {
     const handleAddToWishlist = async (productId) => {
         try {
             await addToWishlist(productId);
-            setToastMessage('Product added to Wishlist');
-            setToastStatus(true);
         } catch (error) {
-            setToastMessage('Something went wrong try again later!');
-            setToastStatus(false);
+            // throw error
         }
         
     }
 
-    useEffect(() => {
-        // Function to be executed after 4 seconds
-        const handlehideToastMessage = () => {
-            setToastStatus(0);
-        };
-    
-        // Set timeout for 4 seconds
-        const timeoutId = setTimeout(handlehideToastMessage, 4000);
-    
-        // Clean up the timeout to prevent memory leaks
-        return () => clearTimeout(timeoutId);
-      }, [toaststatus]); 
-
 
     return (
         <>
-            <ToastMessage message={toastmessage} success={toaststatus} viewbutton={toastmessage === 'Product added to Cart' ? 'cart' : 'wishlist'}/>
+            
             <BreadCrumbs home='Home' category={product.category} pname={product.name}/>
             <div className="productdetails-main-container row">
                 <div className="col-lg-2 col-12 mini-image-container d-none d-lg-flex">
@@ -66,7 +43,7 @@ function ProductDetails (props) {
                     <img src={product.image} alt="" />
                     <img src={product.image} alt="" />
                 </div>
-                <div className="col-lg-4 col-12 main-image-container"><img src={product.image} alt="" /></div>
+                <div className="col-lg-4 col-12 main-image-container p-0"><img src={product.image} alt="" /></div>
                 <div className="col-lg-2 col-12 mini-image-container d-lg-none">
                     <img src={product.image} alt="" />
                     <img src={product.image} alt="" />
@@ -102,6 +79,7 @@ function ProductDetails (props) {
                     </div>
                 </div>
             </div>
+
             <div className="pdp-similar-products">
                 <p className="heading">EXPLORE SIMILAR</p>
                 <div className="similar-products-grid">
