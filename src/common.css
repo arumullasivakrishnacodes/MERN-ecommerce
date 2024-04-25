@@ -124,8 +124,15 @@
 }
 
 .modal-body {
-    border-top: 1px solid var(--gray-shade-border);
-    border-bottom: 1px solid var(--gray-shade-border);
+    border: none;
+}
+
+.modal-content {
+    border-radius: 0;
+}
+
+.modal-footer {
+    border: none;
 }
 
 .modal-header .close {
@@ -161,6 +168,6 @@
     }
 
     .modal-footer {
-        padding: 0 24px;
+        padding: 0;
     }
 }

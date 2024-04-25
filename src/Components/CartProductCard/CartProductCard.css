@@ -95,6 +95,7 @@
                 width: fit-content;
                 height: fit-content;
                 padding: 6px 8px;
+                cursor: pointer;
 
                 span {
                     font-weight: 600;
@@ -108,6 +109,7 @@
                 width: fit-content;
                 height: fit-content;
                 padding: 6px 8px;
+                cursor: pointer;
 
                 span {
                     font-weight: 600;
@@ -168,6 +170,45 @@
     }
 }
 
+
+.modal-quantity-container, .modal-variant-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    padding: 0 40px;
+
+    .modal-quantity, .modal-variant {
+        width: 50px;
+        height: 50px;
+        border: 1px solid var(--gray-shade-border);
+        background: var(--gray-shade);
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &.active {
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            background: var(--white);
+        }
+    }
+}
+
+.quantity-done-btn, .variant-done-btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: var(--primary-blue);
+    font-size: 16px;
+    color: var(--white);
+    border-radius: 0;
+    margin: 12px;
+
+    &:hover {
+        color: var(--white);
+    }
+}
+
 @media (max-width:768px) {
     .cart-product-card-container {
         width: auto;
@@ -222,5 +263,9 @@
                 }
             }
         }
+    }
+
+    .modal-quantity-container, .modal-variant-container {
+        padding: 0;
     }
 }

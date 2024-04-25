@@ -59,8 +59,74 @@ function CartProductCard (props) {
                 </div>
                 <p className="product-price">$ {product.new_price} <span className="price-strike">$ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
                 <div className="variant-quantity-container">
-                    <div className="variant">Size: <span>XL</span></div>
-                    <div className="quantity">Qty: <span>1</span></div>
+                    <div className="variant btn"  data-toggle="modal" data-target={`#cartProductVariant${product.id}`}>Size: <span>XL</span> <span><i class="bi bi-caret-down-fill"></i></span></div>
+                    
+                    <div class="modal fade" id={`cartProductVariant${product.id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Select Size</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div className="details-container row mb-3">
+                                    <div className="image-block col-3"><img src={product.image} alt="" /></div>
+                                    <div className="name-price-block col-9">
+                                    <p className="product-name">{product.name}</p>
+                                    <p className="product-price">$ {product.new_price} <span className="price-strike">$ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
+                                    </div>
+                                </div>
+                                <div className="modal-variant-container">
+                                    <div className="modal-variant d-flex justify-content-center align-items-center active">s</div>
+                                    <div className="modal-variant d-flex justify-content-center align-items-center">M</div>
+                                    <div className="modal-variant d-flex justify-content-center align-items-center">L</div>
+                                    <div className="modal-variant d-flex justify-content-center align-items-center">XL</div>
+                                    <div className="modal-variant d-flex justify-content-center align-items-center">XXL</div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn variant-done-btn" data-dismiss="modal">Done</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="quantity btn" data-toggle="modal" data-target={`#cartProductQuantity${product.id}`}>Qty: <span>1</span> <span><i class="bi bi-caret-down-fill"></i></span></div>
+
+                    <div class="modal fade" id={`cartProductQuantity${product.id}`} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Select Quantity</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div className="details-container row mb-3">
+                                    <div className="image-block col-3"><img src={product.image} alt="" /></div>
+                                    <div className="name-price-block col-9">
+                                    <p className="product-name">{product.name}</p>
+                                    <p className="product-price">$ {product.new_price} <span className="price-strike">$ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
+                                    </div>
+                                </div>
+                                <div className="modal-quantity-container">
+                                    <div className="modal-quantity d-flex justify-content-center align-items-center active">1</div>
+                                    <div className="modal-quantity d-flex justify-content-center align-items-center">2</div>
+                                    <div className="modal-quantity d-flex justify-content-center align-items-center">3</div>
+                                    <div className="modal-quantity d-flex justify-content-center align-items-center">4</div>
+                                    <div className="modal-quantity d-flex justify-content-center align-items-center">5</div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn quantity-done-btn" data-dismiss="modal">Done</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="return-policy-container">
                     <img src={returnImage} alt="" /> <span>14 days return available.</span>

@@ -107,6 +107,8 @@
 
 @media (max-width: 768px) {
     .apply-coupon-section {
+        padding: 0 12px !important;
+
         .heading-section {
             img {
                 width: 28px !important;
