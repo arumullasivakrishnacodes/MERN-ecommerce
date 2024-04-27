@@ -13,7 +13,7 @@ const ShopContextProvider = (props) => {
     const addToCart = (itemId, quantity) => {
         const productExistinCart = cartItems.find((e) => e.id === Number(itemId));
         if (productExistinCart) {
-            productExistinCart.qty = quantity;
+            productExistinCart.qty = quantity + 1;
             setCartItems([...cartItems]);
         } else {
             const cartItem = ProductsData.find((e) => e.id === Number(itemId));

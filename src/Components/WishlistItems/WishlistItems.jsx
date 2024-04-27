@@ -13,7 +13,8 @@ function WishlistItems () {
     }
 
     async function handleMoveToCart  (productID)  {
-        addToCart(productID);
+        const quantity = 1;
+        addToCart(productID, quantity);
     }
 
     async function runFunctions (productID) {

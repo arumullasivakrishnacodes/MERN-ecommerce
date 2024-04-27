@@ -24,7 +24,10 @@ function CartProductCard (props) {
 
     const handleChangeProductQuantity = (productId,e) => {
         const quantityValue = Number(e.target.innerHTML);
-        addToCart(productId, quantityValue)
+        if (quantityValue === 1) {
+            addToCart(productId, quantityValue)
+        }
+        addToCart(productId, quantityValue-1)
     }
 
     return (
