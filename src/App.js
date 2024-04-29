@@ -31,9 +31,9 @@ function App() {
             <Route path='/cart' element={<Cart />} />
             <Route path='/wishlist' element={<Wishlist />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/men' element={<PLP category='men' />} />
-            <Route path='/women' element={<PLP category='women' />} />
-            <Route path='/kids' element={<PLP category='kids' />} />
+            <Route path='/men' element={<PLP category='Men' />} />
+            <Route path='/women' element={<PLP category='Women' />} />
+            <Route path='/kids' element={<PLP category='Kids' />} />
             <Route path='/product' element={<PDP />}>
               <Route path=':productID' element={<PDP />}/>
             </Route>

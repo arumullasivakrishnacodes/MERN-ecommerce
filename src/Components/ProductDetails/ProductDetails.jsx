@@ -72,7 +72,7 @@ function ProductDetails (props) {
                     <div className="product-details-section">
                         <div className="name-price-container">
                             <p className="product-name">{product.name}</p>
-                            <p className="product-price">$ {product.new_price} <span className="price-strike">$ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
+                            <p className="product-price">₹ {product.new_price} <span className="price-strike">₹ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
                         </div>
                         <div className="description-category-container">
                             <p className="product-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum impedit maxime porro reprehenderit repellendus recusandae neque autem iste temporibus sint ea omnis at sapiente, quos consequuntur eveniet mollitia totam eos.</p>

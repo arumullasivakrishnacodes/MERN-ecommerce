@@ -4,9 +4,11 @@ import { ShopContext } from "../Context/ShopContext";
 import BreadCrumbs from "../Components/BreadCrumbs/BreadCrumbs";
 
 function PLP (props) {
-    const products = useContext(ShopContext);
+    const {ProductsData, allProducts} = useContext(ShopContext);
     const [sortSelected, setSortSelected] = useState('Recommended');
     const [sortOpen, setSortOpen] = useState(false);
+
+    console.log(allProducts);
 
     const handleSortOpen = () => {
         setSortOpen(!sortOpen)
@@ -41,7 +43,7 @@ function PLP (props) {
             </div>
             <div className="plp-product-container">
                 {
-                    products.ProductsData.map((product, index) => {
+                    allProducts.map((product, index) => {
                         if (props.category === product.category) {
                             return <ProductTile key={index} product={product} />;
                         } else {

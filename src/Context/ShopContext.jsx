@@ -4,11 +4,23 @@ import ProductsData from '../Assets/Data/all_product'
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
+    const [allProducts, setAllProducts] = useState([]);
     const [cartItems, setCartItems] = useState([]);
     const [cartItemsCount, setCartItemsCount] = useState(0);
     const [wishlistItemsCount, setWishlistItemsCount] = useState(0);
     const [cartTotalPrice, setCartTotalPrice] = useState(0)
     const [wishListItems, setWishlistItems] = useState([]);
+
+    const fetchAllProducts = async () => {
+        await fetch('http://localhost:4000/allproducts')
+            .then((res) => res.json())
+            .then((data) => { setAllProducts(data) });
+    };
+    
+    useEffect(() => {
+        fetchAllProducts();
+    }, []);
+    
 
     const addToCart = (itemId, quantity) => {
         const productExistinCart = cartItems.find((e) => e.id === Number(itemId));
@@ -65,7 +77,7 @@ const ShopContextProvider = (props) => {
         setWishlistItemsCount(wishListItemsLength);
     }, [wishListItems])
     
-    const productsData = {ProductsData, cartItems, wishListItems, cartItemsCount, wishlistItemsCount, cartTotalPrice, addToCart, addToWishlist, removeCartItem, removeWishlistItem};
+    const productsData = {allProducts, ProductsData, cartItems, wishListItems, cartItemsCount, wishlistItemsCount, cartTotalPrice, addToCart, addToWishlist, removeCartItem, removeWishlistItem};
 
     return (
         <ShopContext.Provider value={productsData}>

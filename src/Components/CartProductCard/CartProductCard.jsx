@@ -54,7 +54,7 @@ function CartProductCard (props) {
                                     <div className="image-block col-3"><img src={product.image} alt="" /></div>
                                     <div className="name-price-block col-9">
                                     <p className="product-name">{product.name}</p>
-                                    <p className="product-price">$ {product.new_price} <span className="price-strike">$ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
+                                    <p className="product-price">₹ {product.new_price} <span className="price-strike">₹ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
                                     </div>
                                 </div>
                                 <div className="buttons-container justify-content-center">
@@ -71,7 +71,7 @@ function CartProductCard (props) {
                         </div>
                     </div>
                 </div>
-                <p className="product-price">$ {product.new_price} <span className="price-strike">$ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
+                <p className="product-price">₹ {product.new_price} <span className="price-strike">₹ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
                 <div className="variant-quantity-container">
                     <div className="variant btn"  data-toggle="modal" data-target={`#cartProductVariant${product.id}`}>Size: <span>XL</span> <span><i class="bi bi-caret-down-fill"></i></span></div>
                     
@@ -89,7 +89,7 @@ function CartProductCard (props) {
                                     <div className="image-block col-3"><img src={product.image} alt="" /></div>
                                     <div className="name-price-block col-9">
                                     <p className="product-name">{product.name}</p>
-                                    <p className="product-price">$ {product.new_price} <span className="price-strike">$ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
+                                    <p className="product-price">₹ {product.new_price} <span className="price-strike">₹ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
                                     </div>
                                 </div>
                                 <div className="modal-variant-container">
@@ -124,7 +124,7 @@ function CartProductCard (props) {
                                     <div className="image-block col-3"><img src={product.image} alt="" /></div>
                                     <div className="name-price-block col-9">
                                     <p className="product-name">{product.name}</p>
-                                    <p className="product-price">$ {product.new_price} <span className="price-strike">$ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
+                                    <p className="product-price">₹ {product.new_price} <span className="price-strike">₹ {product.old_price}</span> <span className="price-discount">30% Off</span></p>
                                     </div>
                                 </div>
                                 <div className="modal-quantity-container">
